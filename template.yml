@@ -20,7 +20,7 @@ Globals:
     AutoPublishAlias: live
     DeploymentPreference:
       Enabled: true
-      Type: Canary10Percent5Minutes
+      Type: AllAtOnce
       Role: !Ref CodeDeployRole
 
 Resources:
@@ -38,12 +38,12 @@ Resources:
         GetEvent:
           Type: Api
           Properties:
-            Path: /
+            Path: /test-pyhon
             Method: get
         PostEvent:
           Type: Api
           Properties:
-            Path: /
+            Path: /test-pyhon
             Method: post
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
